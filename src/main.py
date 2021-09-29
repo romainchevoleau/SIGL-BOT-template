@@ -2,13 +2,12 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 from name import *
+from mute import *
 
 bot = commands.Bot(
     command_prefix="!",  # Change to desired prefix
     case_insensitive=True  # Commands aren't case-sensitive
 )
-
-client = discord.Client()
 
 load_dotenv()
 bot.author_id = 148122837889056768  # Change to your discord id!!!
@@ -23,6 +22,7 @@ async def pong(ctx):
     await ctx.send('pong')
 
 bot.add_cog(Name(bot))
+bot.add_cog(Mute(bot))
 
 token = os.getenv("DISCORD_TOKEN")
 bot.run(token)  # Starts the bot
