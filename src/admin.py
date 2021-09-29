@@ -1,4 +1,4 @@
-from discord import Permissions, guild
+from discord import Permissions
 import discord
 from discord.ext import commands
 

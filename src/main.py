@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from name import *
 from ban import *
 from admin import *
+from poll import *
 
 bot = commands.Bot(
     command_prefix="!",  # Change to desired prefix
@@ -29,5 +30,6 @@ bot.add_cog(Name(bot))
 
 bot.add_cog(Ban(bot))
 bot.add_cog(Admin(bot))
+bot.add_cog(Poll(bot))
 token = os.getenv("DISCORD_TOKEN")
 bot.run(token)  # Starts the bot
