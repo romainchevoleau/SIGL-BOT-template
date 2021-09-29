@@ -6,8 +6,9 @@ class Name(commands.Cog):
         self.bot = bot
         self._last_member = None
 
+    #Name command
     @commands.command()
-    async def name(self, ctx, *, member: discord.Member = None):
-        member = member or ctx.author
+    async def name(self, ctx):
+        member = ctx.author
         await ctx.send('{0.name}'.format(member))
             
