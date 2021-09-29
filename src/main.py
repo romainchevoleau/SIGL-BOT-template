@@ -2,6 +2,7 @@ import os
 from discord.ext import commands
 from dotenv import load_dotenv
 from name import *
+from ban import *
 
 bot = commands.Bot(
     command_prefix="!",  # Change to desired prefix
@@ -24,5 +25,6 @@ async def pong(ctx):
 
 bot.add_cog(Name(bot))
 
+bot.add_cog(Ban(bot))
 token = os.getenv("DISCORD_TOKEN")
 bot.run(token)  # Starts the bot
